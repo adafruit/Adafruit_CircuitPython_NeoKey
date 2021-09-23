@@ -2,12 +2,8 @@
 # SPDX-License-Identifier: MIT
 """Example for connecting two NeoKey 1x4 breakouts. Requires bridging the A0 jumper on one board."""
 import board
+from rainbowio import colorwheel
 from adafruit_neokey.neokey1x4 import NeoKey1x4
-
-try:
-    from _pixelbuf import colorwheel
-except ImportError:
-    from adafruit_pypixelbuf import colorwheel
 
 # Create a NeoKey object
 neokey1 = NeoKey1x4(board.I2C())
