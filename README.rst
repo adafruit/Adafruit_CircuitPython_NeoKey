@@ -58,6 +58,11 @@ Usage Example
 
 see examples/neokey1x4_simpletest.py for usage example
 
+Documentation
+=============
+
+API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/neokey/en/latest/>`_.
+
 Contributing
 ============
 
