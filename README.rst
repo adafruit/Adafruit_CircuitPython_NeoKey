@@ -2,7 +2,7 @@ Introduction
 ============
 
 .. image:: https://readthedocs.org/projects/adafruit-circuitpython-neokey/badge/?version=latest
-    :target: https://circuitpython.readthedocs.io/projects/neokey/en/latest/
+    :target: https://docs.circuitpython.org/projects/neokey/en/latest/
     :alt: Documentation Status
 
 .. image:: https://img.shields.io/discord/327254708534116352.svg
@@ -61,7 +61,7 @@ see examples/neokey1x4_simpletest.py for usage example
 Documentation
 =============
 
-API documentation for this library can be found on `Read the Docs <https://circuitpython.readthedocs.io/projects/neokey/en/latest/>`_.
+API documentation for this library can be found on `Read the Docs <https://docs.circuitpython.org/projects/neokey/en/latest/>`_.
 
 Contributing
 ============
