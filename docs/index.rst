@@ -23,7 +23,7 @@ Table of Contents
 .. toctree::
     :caption: Tutorials
 
-    https://learn.adafruit.com/adafruit-neokey/circuitpython-code
+    https://learn.adafruit.com/neokey-1x4-qt-i2c/python-circuitpython
 
 .. toctree::
     :caption: Related Products
