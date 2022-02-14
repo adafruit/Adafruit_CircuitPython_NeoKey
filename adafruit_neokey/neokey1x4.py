@@ -53,7 +53,7 @@ class NeoKey1x4(Seesaw):
 
     def __init__(
         self, i2c_bus: I2C, interrupt: bool = False, addr: int = _NEOKEY1X4_ADDR
-    ):
+    ) -> None:
         super().__init__(i2c_bus, addr)
         self.interrupt_enabled = interrupt
         self.pixels = NeoPixel(
