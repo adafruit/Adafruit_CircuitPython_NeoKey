@@ -33,6 +33,12 @@ from micropython import const
 from adafruit_seesaw.neopixel import NeoPixel
 from adafruit_seesaw.seesaw import Seesaw
 
+try:
+    import typing  # pylint: disable=unused-import
+    from busio import I2C
+except ImportError:
+    pass
+
 _NEOKEY1X4_ADDR = const(0x30)
 
 _NEOKEY1X4_NEOPIX_PIN = const(3)
@@ -45,7 +51,9 @@ _NEOKEY1X4_NUM_KEYS = const(4)
 class NeoKey1x4(Seesaw):
     """Driver for the Adafruit NeoKey 1x4."""
 
-    def __init__(self, i2c_bus, interrupt=False, addr=_NEOKEY1X4_ADDR):
+    def __init__(
+        self, i2c_bus: I2C, interrupt: bool = False, addr: int = _NEOKEY1X4_ADDR
+    ) -> None:
         super().__init__(i2c_bus, addr)
         self.interrupt_enabled = interrupt
         self.pixels = NeoPixel(
@@ -55,7 +63,7 @@ class NeoKey1x4(Seesaw):
         for b in range(4, 8):
             self.pin_mode(b, self.INPUT_PULLUP)
 
-    def __getitem__(self, index):
+    def __getitem__(self, index: int) -> bool:
         if not isinstance(index, int) or (index < 0) or (index > 3):
             raise RuntimeError("Index must be 0 thru 3")
         return not self.digital_read(index + 4)
