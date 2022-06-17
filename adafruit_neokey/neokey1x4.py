@@ -30,7 +30,7 @@ __version__ = "0.0.0-auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_NeoKey.git"
 
 from micropython import const
-from adafruit_seesaw.neopixel import NeoPixel
+from adafruit_seesaw import neopixel
 from adafruit_seesaw.seesaw import Seesaw
 
 try:
@@ -56,8 +56,9 @@ class NeoKey1x4(Seesaw):
     ) -> None:
         super().__init__(i2c_bus, addr)
         self.interrupt_enabled = interrupt
-        self.pixels = NeoPixel(
-            self, _NEOKEY1X4_NEOPIX_PIN, _NEOKEY1X4_NUM_KEYS, brightness=0.2
+        self.pixels = neopixel.NeoPixel(
+            self, _NEOKEY1X4_NEOPIX_PIN, _NEOKEY1X4_NUM_KEYS, brightness=0.2,
+            pixel_order=neopixel.GRB
         )
         # set the pins to inputs, pullups
         for b in range(4, 8):
