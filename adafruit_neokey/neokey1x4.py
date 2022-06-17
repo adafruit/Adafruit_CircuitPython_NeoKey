@@ -57,8 +57,11 @@ class NeoKey1x4(Seesaw):
         super().__init__(i2c_bus, addr)
         self.interrupt_enabled = interrupt
         self.pixels = neopixel.NeoPixel(
-            self, _NEOKEY1X4_NEOPIX_PIN, _NEOKEY1X4_NUM_KEYS, brightness=0.2,
-            pixel_order=neopixel.GRB
+            self,
+            _NEOKEY1X4_NEOPIX_PIN,
+            _NEOKEY1X4_NUM_KEYS,
+            brightness=0.2,
+            pixel_order=neopixel.GRB,
         )
         # set the pins to inputs, pullups
         for b in range(4, 8):
