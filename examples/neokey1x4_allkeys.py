@@ -48,4 +48,4 @@ while True:
         else:
             neokey.pixels[3] = 0x0
 
-    sleep(.5)
+    sleep(0.5)
