@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 """NeoKey simpletest."""
+from time import sleep
 import board
 from adafruit_neokey.neokey1x4 import NeoKey1x4
-from time import sleep
 
 # use default I2C bus
 i2c_bus = board.I2C()
@@ -48,4 +48,4 @@ while True:
         else:
             neokey.pixels[3] = 0x0
 
-    sleep(2)
+    sleep(.5)
