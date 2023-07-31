@@ -71,3 +71,16 @@ class NeoKey1x4(Seesaw):
         if not isinstance(index, int) or (index < 0) or (index > 3):
             raise RuntimeError("Index must be 0 thru 3")
         return not self.digital_read(index + 4)
+
+    def get_keys(self) -> typing.List[bool]:
+        """Read all 4 keys at once and return an array of booleans.
+
+        Returns:
+            typing.List[bool]: _description_
+        """
+        # use a bit mask with ports 4-7 to read all 4 keys at once
+        bulk_read = self.digital_read_bulk(0xF0)
+
+        # convert the leftmost 4 bits to an array of booleans and return
+        keys = [bulk_read & (1 << i) == 0 for i in range(4, 8)]
+        return keys
