@@ -29,12 +29,13 @@ Implementation Notes
 __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/adafruit/Adafruit_CircuitPython_NeoKey.git"
 
-from micropython import const
 from adafruit_seesaw import neopixel
 from adafruit_seesaw.seesaw import Seesaw
+from micropython import const
 
 try:
-    import typing  # pylint: disable=unused-import
+    import typing
+
     from busio import I2C
 except ImportError:
     pass
@@ -51,9 +52,7 @@ _NEOKEY1X4_NUM_KEYS = const(4)
 class NeoKey1x4(Seesaw):
     """Driver for the Adafruit NeoKey 1x4."""
 
-    def __init__(
-        self, i2c_bus: I2C, interrupt: bool = False, addr: int = _NEOKEY1X4_ADDR
-    ) -> None:
+    def __init__(self, i2c_bus: I2C, interrupt: bool = False, addr: int = _NEOKEY1X4_ADDR) -> None:
         super().__init__(i2c_bus, addr)
         self.interrupt_enabled = interrupt
         self.pixels = neopixel.NeoPixel(

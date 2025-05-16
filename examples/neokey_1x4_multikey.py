@@ -1,8 +1,10 @@
 # SPDX-FileCopyrightText: 2021 Kattni Rembor for Adafruit Industries
 # SPDX-License-Identifier: MIT
 """Example for connecting two NeoKey 1x4 breakouts. Requires bridging the A0 jumper on one board."""
+
 import board
 from rainbowio import colorwheel
+
 from adafruit_neokey.neokey1x4 import NeoKey1x4
 
 # Create a NeoKey object
