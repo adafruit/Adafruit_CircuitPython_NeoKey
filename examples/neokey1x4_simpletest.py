@@ -1,7 +1,9 @@
 # SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
 # SPDX-License-Identifier: MIT
 """NeoKey simpletest."""
+
 import board
+
 from adafruit_neokey.neokey1x4 import NeoKey1x4
 
 # use default I2C bus
